@@ -4,9 +4,8 @@ import numpy as np
 
 from core.exr import ExrImage, MaskImage
 from core.error import mse, rms, absdiff
+from core.utils import minmax
 
-def minmax(_min, _max, value):
-    return max(min(value, _max), _min)
 
 def diffluminance(img1, img2, minimum=0.0, maximum=float("inf"), mask=None):
     
