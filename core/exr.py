@@ -15,12 +15,14 @@ class PyXrImage:
     height = 0
     size = (width , height)
     
-
     def __init__(self, f):
         self.file = Image.open(f)
         self.width, self.height = self.file.size
         self.size = (self.width , self.height)
-        
+
+    def getpixel(x,y):
+        i = y * self.width + x
+        return [self.red[i], self.green[i], self.blue[i]]    
         
     def computeLuminance(self):
         luminance = array.array('f', [])
